@@ -5,132 +5,241 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>CVBV LTD – IT Consultancy</title>
   <style>
-    /* Basic Reset & Fonts */
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family: 'Segoe UI', sans-serif; color:#333; background:#f4f4f4; }
-    
-    /* Header */
+
     header {
       background:#002244;
       color:#fff;
-      padding:30px 20px;
+      padding:40px 20px;
       text-align:center;
       position:relative;
-      overflow:hidden;
     }
     header h1 {
-      font-size:2.8rem;
-      animation: slideIn 1.5s ease-out forwards;
-      opacity:0;
+      font-size:3rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
     header p {
-      font-size:1.2rem;
-      margin-top:10px;
-    }
-    @keyframes slideIn {
-      0% { transform: translateY(-50px); opacity:0; }
-      100% { transform: translateY(0); opacity:1; }
+      font-size:1.3rem;
+      font-weight: 500;
+      color: #a9c0db;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+      font-style: italic;
     }
 
-    /* Typing company name effect */
-    .typewriter h1 {
-      overflow:hidden; white-space:nowrap;
-      border-right: .15em solid #fff;
-      animation: typing 2s steps(15,end), blink 0.7s step-end infinite;
-      width:0;
-      display:inline-block;
-    }
-    @keyframes typing { from { width:0 } to { width:100% } }
-    @keyframes blink { 50% { border-color:transparent } }
-
-    /* Navigation */
     nav {
       background:#003366;
       display:flex;
       justify-content:center;
       gap:20px;
-      padding:10px 0;
+      padding:12px 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
     nav a {
       color:#fff;
       text-decoration:none;
-      font-weight:600;
+      transition: color 0.3s ease;
     }
-    nav a:hover { text-decoration:underline; }
+    nav a:hover { color:#ffcc00; }
 
-    /* Main Content */
     .container {
-      max-width:1000px;
-      margin:30px auto;
+      max-width:1100px;
+      margin:40px auto;
       background:#fff;
-      padding:25px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      padding:35px 40px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.12);
+      border-radius: 8px;
     }
-    section { margin-bottom:30px; }
-    h2 { color:#002244; margin-bottom:15px; }
-
-    /* Services List */
-    ul.services {
+    section { margin-bottom:50px; }
+    h2 {
+      color:#002244;
+      margin-bottom:20px;
+      border-bottom: 3px solid #ffcc00;
+      padding-bottom: 8px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    ul.services, .tech-columns ul {
       list-style:none;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:15px;
+      padding-left:0;
     }
-    ul.services li {
+    ul.services li, .tech-columns ul li {
       background:#eef4fa;
-      padding:15px;
-      border-left:4px solid #002244;
+      padding:15px 20px;
+      margin-bottom:12px;
+      border-left:6px solid #002244;
+      font-weight: 600;
+      color: #004080;
+      border-radius: 4px;
+      transition: background 0.3s ease;
     }
-
-    /* Footer */
+    ul.services li:hover, .tech-columns ul li:hover {
+      background: #dbe9ff;
+    }
+    .tech-columns {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:30px;
+      margin-top:25px;
+    }
+    .tech-columns h3 {
+      margin-bottom:15px;
+      color:#003366;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+    blockquote {
+      border-left:6px solid #ffcc00;
+      margin:25px 0;
+      padding-left:20px;
+      font-style: italic;
+      color:#555;
+      font-size: 1.1rem;
+      background: #fef9e7;
+      border-radius: 5px;
+    }
+    blockquote p {
+      margin: 0;
+    }
     footer {
       text-align:center;
       background:#002244;
       color:#fff;
-      padding:15px;
-      margin-top:40px;
-      font-size:.9rem;
+      padding:20px;
+      font-size:1rem;
+      letter-spacing: 1px;
+    }
+    a {
+      color: #002244;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      color: #ffcc00;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <!-- Choose one animation style: remove .typewriter container if not needed -->
-    <div class="typewriter"><h1>CVBV LTD</h1></div>
-    <p>Your Trusted UK-Based IT Consultancy</p>
+    <h1>CVBV LTD</h1>
+    <p>Delivering Strategic IT Solutions with Integrity, Innovation & Expertise</p>
   </header>
 
   <nav>
-    <a href="#">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#consultancy">Consultancy</a>
+    <a href="#technologies">Technologies</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <div class="container">
+
     <section id="about">
       <h2>About Us</h2>
-      <p>CVBV LTD is a private limited company incorporated in England, based in Romford. We specialise in delivering expert IT consultancy services, tailored for businesses across the UK aiming to transform digitally and optimise operations.</p>
+      <p>
+        CVBV LTD is a premier IT consultancy based in Romford, England, committed to empowering UK businesses through innovative technology solutions. Founded in 2025, we specialise in delivering bespoke IT strategies that align perfectly with each client’s unique objectives and challenges.
+      </p>
+      <p>
+        Our team comprises certified professionals with extensive experience across various IT domains, ensuring your business benefits from industry best practices, robust security, and cutting-edge technology adoption. We pride ourselves on building lasting partnerships grounded in trust, transparency, and measurable outcomes.
+      </p>
+      <p>
+        Whether you are a start-up, SME, or an established enterprise, CVBV LTD is dedicated to transforming your IT landscape into a competitive advantage that drives growth and operational excellence.
+      </p>
     </section>
 
     <section id="services">
       <h2>Our Services</h2>
       <ul class="services">
-        <li>Custom Software & Web Application Development</li>
-        <li>IT Infrastructure Planning & Optimisation</li>
-        <li>Cloud Solutions & Migration (AWS, Azure)</li>
-        <li>Business Intelligence & Data Analytics</li>
-        <li>Technical Project Management & Agile Consulting</li>
-        <li>IT Compliance & Cyber-Security Advisory</li>
+        <li>Custom Software & Web Application Development tailored to your business needs</li>
+        <li>Comprehensive IT Infrastructure Planning & Optimisation ensuring scalability</li>
+        <li>Cloud Solutions & Seamless Migration to AWS, Azure and other platforms</li>
+        <li>Business Intelligence & Data Analytics to empower data-driven decisions</li>
+        <li>Technical Project Management & Agile Consulting for efficient delivery</li>
+        <li>IT Compliance & Cyber-Security Advisory to safeguard your assets</li>
+        <li>IT Outsourcing & Managed Services including remote and onsite support</li>
+        <li>Office Relocation IT Planning to ensure minimal downtime and risk</li>
       </ul>
     </section>
 
-    <section id="info">
+    <section id="consultancy">
+      <h2>IT Consultancy Excellence</h2>
+      <p>
+        At <strong>CVBV LTD</strong>, we recognise the complexity and critical nature of IT management in today’s business environment. From detailed cybersecurity assessments to tailored disaster recovery plans, our consultants provide independent, expert guidance designed to future-proof your infrastructure.
+      </p>
+      <p>
+        We work closely with you to understand your operational priorities, then design and implement solutions that reduce risk, enhance performance, and optimise costs. Our consultancy services cover:
+      </p>
+      <ul class="services">
+        <li>Cybersecurity Audits & Threat Mitigation with proactive monitoring</li>
+        <li>Cloud Strategy, Migration & Governance aligned with your goals</li>
+        <li>IT Infrastructure Design & Business Continuity Planning</li>
+        <li>Remote Access & VPN Architecture for secure workforce mobility</li>
+        <li>Data Management, Backup & Recovery Solutions</li>
+        <li>IT Policy Development & Regulatory Compliance Support</li>
+      </ul>
+      <blockquote>
+        <p>“CVBV was instrumental in reshaping our IT infrastructure after a major relocation. Their consultancy saved us thousands in future costs and positioned our team for scalable growth.” – A Satisfied UK Client</p>
+      </blockquote>
+    </section>
+
+    <section id="technologies">
+      <h2>Technologies We Offer</h2>
+      <p>
+        We harness the power of leading technologies to deliver innovative and reliable solutions. Our team continuously updates its expertise to provide you with access to the best tools and platforms available.
+      </p>
+      <div class="tech-columns">
+        <div>
+          <h3>Cloud & Virtualisation</h3>
+          <ul>
+            <li>Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform</li>
+            <li>VMware, Hyper-V for efficient virtualisation</li>
+            <li>Private, Public & Hybrid Cloud Architecture & Management</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Cyber Security & Compliance</h3>
+          <ul>
+            <li>Firewall Management, Endpoint Security & SIEM Solutions</li>
+            <li>Multi-Factor Authentication (MFA) & Zero Trust Models</li>
+            <li>Penetration Testing & Vulnerability Assessments</li>
+            <li>GDPR, ISO 27001 Compliance Consulting & Audit Support</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Web & Application Development</h3>
+          <ul>
+            <li>Modern JavaScript Frameworks: React.js, Angular, Vue.js</li>
+            <li>Backend Development: Node.js, .NET Core, Java, Python</li>
+            <li>Responsive Web Design, RESTful APIs, Mobile Apps (iOS & Android)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Data Management & DevOps</h3>
+          <ul>
+            <li>SQL Server, PostgreSQL, MySQL, MongoDB & Redis</li>
+            <li>Containerisation & Orchestration: Docker, Kubernetes</li>
+            <li>CI/CD Pipelines with Jenkins, GitHub Actions, Terraform</li>
+            <li>Infrastructure as Code (IaC) for scalable deployments</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
       <h2>Company & Contact Information</h2>
-      <p><strong>Registered Office:</strong> 45 South Street, Romford, England, RM1 2BX</p>
-      <p><strong>Status:</strong> Active &nbsp;&nbsp; • &nbsp;&nbsp; <strong>Incorporated:</strong> 25 June 2025</p>
-      <p><strong>SIC Code:</strong> 62020 – IT Consultancy Activities</p>
+      <p><strong>Registered Office Address:</strong> 45 South Street, Romford, England, RM1 2BX</p>
+      <p><strong>Company Status:</strong> Active &nbsp;&nbsp; • &nbsp;&nbsp; <strong>Incorporated On:</strong> 25 June 2025</p>
+      <p><strong>Nature of Business (SIC):</strong> 62020 – Information Technology Consultancy Activities</p>
       <p><strong>Phone:</strong> +44 7990 257886 &nbsp;&nbsp; • &nbsp;&nbsp; <strong>Email:</strong> <a href="mailto:chaitanyaguttula3@gmail.com">chaitanyaguttula3@gmail.com</a></p>
     </section>
   </div>
