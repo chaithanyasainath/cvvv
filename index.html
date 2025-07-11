@@ -1,57 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CVBV LTD</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>CVBV LTD – IT Consultancy</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 20px;
+    /* Basic Reset & Fonts */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Segoe UI', sans-serif; color:#333; background:#f4f4f4; }
+    
+    /* Header */
+    header {
+      background:#002244;
+      color:#fff;
+      padding:30px 20px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
     }
+    header h1 {
+      font-size:2.8rem;
+      animation: slideIn 1.5s ease-out forwards;
+      opacity:0;
+    }
+    header p {
+      font-size:1.2rem;
+      margin-top:10px;
+    }
+    @keyframes slideIn {
+      0% { transform: translateY(-50px); opacity:0; }
+      100% { transform: translateY(0); opacity:1; }
+    }
+
+    /* Typing company name effect */
+    .typewriter h1 {
+      overflow:hidden; white-space:nowrap;
+      border-right: .15em solid #fff;
+      animation: typing 2s steps(15,end), blink 0.7s step-end infinite;
+      width:0;
+      display:inline-block;
+    }
+    @keyframes typing { from { width:0 } to { width:100% } }
+    @keyframes blink { 50% { border-color:transparent } }
+
+    /* Navigation */
+    nav {
+      background:#003366;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      padding:10px 0;
+    }
+    nav a {
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+    }
+    nav a:hover { text-decoration:underline; }
+
+    /* Main Content */
     .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width:1000px;
+      margin:30px auto;
+      background:#fff;
+      padding:25px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
     }
-    h1 {
-      color: #333;
+    section { margin-bottom:30px; }
+    h2 { color:#002244; margin-bottom:15px; }
+
+    /* Services List */
+    ul.services {
+      list-style:none;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:15px;
     }
-    p {
-      font-size: 18px;
-      color: #555;
+    ul.services li {
+      background:#eef4fa;
+      padding:15px;
+      border-left:4px solid #002244;
     }
-    .info {
-      margin-top: 20px;
-    }
-    .info p {
-      margin: 5px 0;
+
+    /* Footer */
+    footer {
+      text-align:center;
+      background:#002244;
+      color:#fff;
+      padding:15px;
+      margin-top:40px;
+      font-size:.9rem;
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <!-- Choose one animation style: remove .typewriter container if not needed -->
+    <div class="typewriter"><h1>CVBV LTD</h1></div>
+    <p>Your Trusted UK-Based IT Consultancy</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <div class="container">
-    <h1>Welcome to CVBV LTD</h1>
-    <p>We provide expert Information Technology Consultancy services.</p>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>CVBV LTD is a private limited company incorporated in England, based in Romford. We specialise in delivering expert IT consultancy services, tailored for businesses across the UK aiming to transform digitally and optimise operations.</p>
+    </section>
 
-    <div class="info">
-      <h2>Company Details</h2>
-      <p><strong>Registered Office Address:</strong> 45 South Street, Romford, England, RM1 2BX</p>
-      <p><strong>Company Status:</strong> Active</p>
-      <p><strong>Company Type:</strong> Private Limited Company</p>
-      <p><strong>Incorporated On:</strong> 25 June 2025</p>
-      <p><strong>SIC Code:</strong> 62020 - Information Technology Consultancy Activities</p>
-    </div>
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul class="services">
+        <li>Custom Software & Web Application Development</li>
+        <li>IT Infrastructure Planning & Optimisation</li>
+        <li>Cloud Solutions & Migration (AWS, Azure)</li>
+        <li>Business Intelligence & Data Analytics</li>
+        <li>Technical Project Management & Agile Consulting</li>
+        <li>IT Compliance & Cyber-Security Advisory</li>
+      </ul>
+    </section>
 
-    <div class="info">
-      <h2>Contact Us</h2>
-      <p><strong>Phone:</strong> +44 7990 257886</p>
-      <p><strong>Email:</strong> chaitanyaguttula3@gmail.com</p>
-    </div>
+    <section id="info">
+      <h2>Company & Contact Information</h2>
+      <p><strong>Registered Office:</strong> 45 South Street, Romford, England, RM1 2BX</p>
+      <p><strong>Status:</strong> Active &nbsp;&nbsp; • &nbsp;&nbsp; <strong>Incorporated:</strong> 25 June 2025</p>
+      <p><strong>SIC Code:</strong> 62020 – IT Consultancy Activities</p>
+      <p><strong>Phone:</strong> +44 7990 257886 &nbsp;&nbsp; • &nbsp;&nbsp; <strong>Email:</strong> <a href="mailto:chaitanyaguttula3@gmail.com">chaitanyaguttula3@gmail.com</a></p>
+    </section>
   </div>
+
+  <footer>
+    &copy; 2025 CVBV LTD – All Rights Reserved
+  </footer>
+
 </body>
 </html>
