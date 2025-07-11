@@ -1,259 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>CVBV LTD – IT Consultancy</title>
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
+    /* Reset & base */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
-      background: #f4f4f4;
-      overflow-x: hidden;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+      background: #f9fafc;
       line-height: 1.6;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+      object-fit: cover;
+      display: block;
+      margin: 20px 0;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.02);
     }
 
     /* Header */
     header {
-      background: #002244;
+      background: linear-gradient(135deg, #002244 0%, #004080 100%);
       color: #fff;
-      padding: 40px 20px;
+      padding: 60px 20px 50px;
       text-align: center;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
       position: relative;
       overflow: hidden;
     }
+
     header h1 {
-      font-size: 3rem;
+      font-size: 3.6rem;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
+
     header p {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 500;
-      color: #a9c0db;
-      max-width: 600px;
+      color: #d3def5;
+      max-width: 700px;
       margin: 0 auto;
-      line-height: 1.5;
       font-style: italic;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
 
     /* Navigation */
-    nav {
+    .nav-wrapper {
       background: #003366;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 12px 0;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      user-select: none;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 120;
+      border-radius: 0 0 20px 20px;
     }
-    nav a {
-      color: #fff;
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      padding: 16px 20px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      font-weight: 600;
+    }
+
+    nav ul li a {
+      color: #f9f9f9;
       text-decoration: none;
-      transition: color 0.3s ease;
+      font-size: 1.1rem;
+      padding: 10px 6px;
+      border-radius: 8px;
+      transition: background 0.3s ease, color 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      box-shadow: inset 0 0 0 0 #ffcc00;
     }
-    nav a:hover {
-      color: #ffcc00;
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background: #ffcc00;
+      color: #002244;
+      box-shadow: inset 0 0 10px #ffcc00;
+      outline: none;
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      width: 30px;
+      height: 22px;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 150;
+    }
+
+    .nav-toggle span {
+      display: block;
+      height: 3.5px;
+      background: white;
+      border-radius: 3px;
+      transition: all 0.3s ease;
     }
 
     /* Container */
     .container {
       max-width: 1100px;
-      margin: 40px auto;
+      margin: 50px auto 80px;
       background: #fff;
-      padding: 35px 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    section {
-      margin-bottom: 50px;
-    }
-    h2 {
-      color: #002244;
-      margin-bottom: 20px;
-      border-bottom: 3px solid #ffcc00;
-      padding-bottom: 8px;
-      font-weight: 700;
-      letter-spacing: 1px;
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
     }
 
-    ul.services, .tech-columns ul {
+    .container:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      color: #002244;
+      margin-bottom: 30px;
+      border-bottom: 4px solid #ffcc00;
+      padding-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 2.4rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    ul.services,
+    .tech-columns ul {
       list-style: none;
       padding-left: 0;
     }
-    ul.services li, .tech-columns ul li {
+
+    ul.services li,
+    .tech-columns ul li {
       background: #eef4fa;
-      padding: 15px 20px;
-      margin-bottom: 12px;
-      border-left: 6px solid #002244;
+      padding: 18px 25px;
+      margin-bottom: 16px;
+      border-left: 8px solid #002244;
       font-weight: 600;
       color: #004080;
-      border-radius: 4px;
-      transition: background 0.3s ease;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 64, 128, 0.1);
+      transition: background 0.35s ease, transform 0.3s ease;
+      cursor: default;
     }
-    ul.services li:hover, .tech-columns ul li:hover {
+
+    ul.services li:hover,
+    .tech-columns ul li:hover {
       background: #dbe9ff;
+      transform: translateX(6px);
+      box-shadow: 0 8px 24px rgba(0, 64, 128, 0.15);
     }
 
     .tech-columns {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 40px;
+      margin-top: 35px;
     }
+
     .tech-columns h3 {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       color: #003366;
       font-weight: 700;
-      letter-spacing: 0.8px;
+      letter-spacing: 1px;
+      font-size: 1.6rem;
+      font-family: 'Poppins', sans-serif;
+      text-transform: uppercase;
+      border-bottom: 3px solid #ffcc00;
+      padding-bottom: 8px;
     }
 
     blockquote {
-      border-left: 6px solid #ffcc00;
-      margin: 25px 0;
-      padding-left: 20px;
+      border-left: 8px solid #ffcc00;
+      margin: 35px 0;
+      padding-left: 30px;
       font-style: italic;
       color: #555;
-      font-size: 1.1rem;
-      background: #fef9e7;
-      border-radius: 5px;
+      font-size: 1.25rem;
+      background: #fff8d6;
+      border-radius: 10px;
+      box-shadow: 0 4px 18px rgba(255, 204, 0, 0.25);
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      max-width: 900px;
     }
+
     blockquote p {
       margin: 0;
     }
 
-    footer {
+    /* Contact Form */
+    #contact {
+      max-width: 1100px;
+      margin: 0 auto 100px;
+      padding: 0 20px;
+    }
+
+    #contact h2 {
+      margin-bottom: 40px;
+      font-size: 2.6rem;
       text-align: center;
-      background: #002244;
-      color: #fff;
-      padding: 20px;
-      font-size: 1rem;
-      letter-spacing: 1px;
-    }
-    a {
       color: #002244;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    a:hover {
-      color: #ffcc00;
-      text-decoration: underline;
-    }
-
-    /* Responsive Images */
-    .section-img {
-      width: 100%;
-      max-width: 100%;
-      margin: 20px 0;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-      object-fit: cover;
-      display: block;
+      border-bottom: 5px solid #ffcc00;
+      width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 10px;
+      letter-spacing: 2px;
     }
 
-    /* Mobile Navigation - Hamburger */
-    .nav-wrapper {
-      position: relative;
-      background: #003366;
-      user-select: none;
-    }
-    .nav-toggle {
-      position: absolute;
-      top: 12px;
-      right: 20px;
-      display: none;
-      flex-direction: column;
-      width: 30px;
-      height: 22px;
-      justify-content: space-between;
-      cursor: pointer;
-      z-index: 110;
-    }
-    .nav-toggle span {
-      display: block;
-      height: 4px;
-      background: white;
-      border-radius: 2px;
-    }
-    nav {
-      justify-content: center;
-      padding: 14px 20px;
-    }
-    nav ul {
+    #contact-form {
+      max-width: 650px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
       display: flex;
+      flex-direction: column;
+      gap: 25px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    #contact-form:hover {
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+      padding: 15px 18px;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      border: 2px solid #ddd;
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s ease;
+      resize: none;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    #contact-form input:focus,
+    #contact-form textarea:focus {
+      border-color: #ffcc00;
+      outline: none;
+      box-shadow: 0 0 8px #ffcc00aa;
+    }
+
+    #contact-form button {
+      background: #ffcc00;
+      border: none;
+      padding: 18px 0;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 12px;
+      color: #002244;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 6px 15px rgba(255, 204, 0, 0.6);
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    #contact-form button:hover,
+    #contact-form button:focus {
+      background: #e6b800;
+      box-shadow: 0 8px 22px rgba(230, 184, 0, 0.9);
+      outline: none;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #002244 0%, #004080 100%);
+      color: #fff;
+      padding: 50px 20px 40px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.8px;
+      line-height: 1.6;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      box-shadow: 0 -4px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    footer a {
+      color: #ffdd44;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover,
+    footer a:focus {
+      text-decoration: underline;
+      color: #fff;
+      outline: none;
+    }
+
+    footer .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    footer .footer-column {
+      flex: 1 1 240px;
+      min-width: 240px;
+    }
+
+    footer .footer-column ul {
       list-style: none;
-      gap: 20px;
-    }
-    nav ul li a {
-      padding: 8px 5px;
-      display: inline-block;
+      padding-left: 0;
+      line-height: 1.7;
+      margin-top: 12px;
     }
 
-    /* Mobile Styles */
+    footer .footer-column ul li {
+      margin-bottom: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    footer .footer-column ul li:hover {
+      transform: translateX(4px);
+    }
+
+    footer .footer-column h3 {
+      border-bottom: 3px solid #ffcc00;
+      padding-bottom: 10px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 18px;
+    }
+
+    footer .footer-column p {
+      margin-top: 10px;
+      font-weight: 500;
+      color: #f1f1f1cc;
+    }
+
+    /* Business Hours Styling */
+    .business-hours {
+      margin-top: 24px;
+      font-weight: 500;
+      color: #f1f1f1cc;
+    }
+
+    .business-hours h4 {
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #ffcc00;
+      padding-bottom: 4px;
+    }
+
+    .business-hours ul {
+      list-style: none;
+      padding-left: 0;
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #ddd;
+      margin-top: 6px;
+    }
+
+    .business-hours ul li {
+      margin-bottom: 6px;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #d3def5aa;
+      letter-spacing: 0.8px;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header p {
-        font-size: 1rem;
-        max-width: 90%;
-      }
-      .container {
-        padding: 25px 20px;
-        margin: 25px 15px;
-      }
-      h2 {
-        font-size: 1.6rem;
+      .footer-container {
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+        /* Ensure left alignment */
       }
 
-      /* Make nav a hamburger menu */
+      footer .footer-column {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        padding: 30px 25px;
+        margin: 40px 20px 70px;
+      }
+
+      nav ul {
+        gap: 18px;
+      }
+
+      nav ul li a {
+        font-size: 1rem;
+        padding: 8px 4px;
+      }
+
+      header h1 {
+        font-size: 2.8rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Add this to your existing CSS */
+    @media (max-width: 768px) {
       .nav-wrapper {
-        position: relative;
+        display: none;
       }
-      nav {
-        background: #003366;
-        padding: 0;
-        position: relative;
-        box-shadow: none;
+    }
+
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
       }
+
       nav ul {
         flex-direction: column;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        transition: max-height 0.35s ease;
         background: #003366;
         width: 100%;
+        border-radius: 0 0 20px 20px;
       }
+
       nav ul.open {
-        max-height: 500px; /* Enough for all links */
+        max-height: 500px;
       }
+
       nav ul li {
         border-top: 1px solid #002244;
         text-align: center;
         margin: 0;
       }
+
       nav ul li a {
         padding: 15px 0;
         font-size: 1.1rem;
         display: block;
+        letter-spacing: 1.2px;
       }
-      .nav-toggle {
-        display: flex;
+
+      .footer-container {
+        flex-direction: column;
+        gap: 50px;
       }
     }
-
   </style>
 </head>
+
 <body>
 
   <header>
@@ -268,7 +531,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#consultancy">Consultancy</a></li>
         <li><a href="#technologies">Technologies</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
     </nav>
     <div class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" tabindex="0" role="button">
@@ -282,21 +545,30 @@
 
     <section id="about">
       <h2>About Us</h2>
-      <img class="section-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1100&q=80" alt="Team working on IT solutions">
+      <img class="section-img"
+        src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1100&q=80"
+        alt="Team working on IT solutions" />
       <p>
-        CVBV LTD is a premier IT consultancy based in Romford, England, committed to empowering UK businesses through innovative technology solutions. Founded in 2025, we specialise in delivering bespoke IT strategies that align perfectly with each client’s unique objectives and challenges.
+        CVBV LTD is a premier IT consultancy based in Romford, England, committed to empowering UK businesses through
+        innovative technology solutions. Founded in 2025, we specialise in delivering bespoke IT strategies that align
+        perfectly with each client’s unique objectives and challenges.
       </p>
       <p>
-        Our team comprises certified professionals with extensive experience across various IT domains, ensuring your business benefits from industry best practices, robust security, and cutting-edge technology adoption. We pride ourselves on building lasting partnerships grounded in trust, transparency, and measurable outcomes.
+        Our team comprises certified professionals with extensive experience across various IT domains, ensuring your
+        business benefits from industry best practices, robust security, and cutting-edge technology adoption. We pride
+        ourselves on building lasting partnerships grounded in trust, transparency, and measurable outcomes.
       </p>
       <p>
-        Whether you are a start-up, SME, or an established enterprise, CVBV LTD is dedicated to transforming your IT landscape into a competitive advantage that drives growth and operational excellence.
+        Whether you are a start-up, SME, or an established enterprise, CVBV LTD is dedicated to transforming your IT
+        landscape into a competitive advantage that drives growth and operational excellence.
       </p>
     </section>
 
     <section id="services">
       <h2>Our Services</h2>
-      <img class="section-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1100&q=80" alt="IT services and planning">
+      <img class="section-img"
+        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1100&q=80"
+        alt="IT services and planning" />
       <ul class="services">
         <li>Custom Software & Web Application Development tailored to your business needs</li>
         <li>Comprehensive IT Infrastructure Planning & Optimisation ensuring scalability</li>
@@ -311,95 +583,134 @@
 
     <section id="consultancy">
       <h2>IT Consultancy Excellence</h2>
-      <img class="section-img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1100&q=80" alt="IT professionals collaborating">
+      <img class="section-img"
+        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1100&q=80"
+        alt="Consultant advising client" />
       <p>
-        At <strong>CVBV LTD</strong>, we recognise the complexity and critical nature of IT management in today’s business environment. From detailed cybersecurity assessments to tailored disaster recovery plans, our consultants provide independent, expert guidance designed to future-proof your infrastructure.
+        CVBV LTD offers expert IT consultancy services that help you streamline operations, reduce costs, and innovate
+        faster. Our consultants work closely with your leadership to understand business drivers and craft IT strategies
+        that maximize ROI.
       </p>
       <p>
-        We work closely with you to understand your operational priorities, then design and implement solutions that reduce risk, enhance performance, and optimise costs. Our consultancy services cover:
+        From infrastructure assessment and cloud adoption to digital transformation roadmaps and security frameworks,
+        our consultancy approach is holistic and pragmatic. We focus on delivering actionable insights and measurable
+        value.
       </p>
-      <ul class="services">
-        <li>Cybersecurity Audits & Threat Mitigation with proactive monitoring</li>
-        <li>Cloud Strategy, Migration & Governance aligned with your goals</li>
-        <li>IT Infrastructure Design & Business Continuity Planning</li>
-        <li>Remote Access & VPN Architecture for secure workforce mobility</li>
-        <li>Data Management, Backup & Recovery Solutions</li>
-        <li>IT Policy Development & Regulatory Compliance Support</li>
-      </ul>
-      <blockquote>
-        <p>“CVBV was instrumental in reshaping our IT infrastructure after a major relocation. Their consultancy saved us thousands in future costs and positioned our team for scalable growth.” – A Satisfied UK Client</p>
-      </blockquote>
+      <p>
+        Our commitment to quality, compliance, and proactive problem-solving ensures your IT environment supports your
+        long-term growth and agility.
+      </p>
     </section>
 
     <section id="technologies">
-      <h2>Technologies We Offer</h2>
-      <p>
-        We harness the power of leading technologies to deliver innovative and reliable solutions. Our team continuously updates its expertise to provide you with access to the best tools and platforms available.
-      </p>
+      <h2>Technologies We Use</h2>
       <div class="tech-columns">
         <div>
-          <h3>Cloud & Virtualisation</h3>
+          <h3>Development</h3>
           <ul>
-            <li>Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform</li>
-            <li>VMware, Hyper-V for efficient virtualisation</li>
-            <li>Private, Public & Hybrid Cloud Architecture & Management</li>
+            <li>JavaScript (React, Node.js)</li>
+            <li>Python (Django, Flask)</li>
+            <li>Java (Spring Boot)</li>
+            <li>C# (.NET Core)</li>
+            <li>TypeScript</li>
           </ul>
         </div>
         <div>
-          <h3>Cyber Security & Compliance</h3>
+          <h3>Cloud & Infrastructure</h3>
           <ul>
-            <li>Firewall Management, Endpoint Security & SIEM Solutions</li>
-            <li>Multi-Factor Authentication (MFA) & Zero Trust Models</li>
-            <li>Penetration Testing & Vulnerability Assessments</li>
-            <li>GDPR, ISO 27001 Compliance Consulting & Audit Support</li>
+            <li>AWS (EC2, S3, Lambda)</li>
+            <li>Microsoft Azure</li>
+            <li>Docker & Kubernetes</li>
+            <li>CI/CD Pipelines</li>
+            <li>Terraform & Infrastructure as Code</li>
           </ul>
         </div>
         <div>
-          <h3>Web & Application Development</h3>
+          <h3>Data & Analytics</h3>
           <ul>
-            <li>Modern JavaScript Frameworks: React.js, Angular, Vue.js</li>
-            <li>Backend Development: Node.js, .NET Core, Java, Python</li>
-            <li>Responsive Web Design, RESTful APIs, Mobile Apps (iOS & Android)</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Data Management & DevOps</h3>
-          <ul>
-            <li>SQL Server, PostgreSQL, MySQL, MongoDB & Redis</li>
-            <li>Containerisation & Orchestration: Docker, Kubernetes</li>
-            <li>CI/CD Pipelines with Jenkins, GitHub Actions, Terraform</li>
-            <li>Infrastructure as Code (IaC) for scalable deployments</li>
+            <li>SQL & NoSQL Databases</li>
+            <li>Power BI & Tableau</li>
+            <li>Machine Learning Models</li>
+            <li>Data Warehousing</li>
+            <li>Business Intelligence</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Company & Contact Information</h2>
-      <p><strong>Registered Office Address:</strong> 45 South Street, Romford, England, RM1 2BX</p>
-      <p><strong>Nature of Business (SIC):</strong> 62020 – Information Technology Consultancy Activities</p>
-      <p><strong>Phone:</strong> +44 7990 257886 &nbsp;&nbsp; • &nbsp;&nbsp; <strong>Email:</strong> <a href="mailto:chaitanyaguttula3@gmail.com">chaitanyaguttula3@gmail.com</a></p>
-    </section>
   </div>
 
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form" action="#" method="POST" novalidate>
+      <input type="text" name="name" placeholder="Your Name" required autocomplete="name" />
+      <input type="email" name="email" placeholder="Your Email" required autocomplete="email" />
+      <input type="text" name="subject" placeholder="Subject" required />
+      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
   <footer>
-    &copy; 2025 CVBV LTD – All Rights Reserved
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Contact Information</h3>
+        <p>CVBV LTD</p>
+        <p>45 Station Parade, Romford</p>
+        <p>London, RM1 2BX, United Kingdom</p>
+        <p>Phone: <a href="tel:+441234567890">+44 7990 257 886</a></p>
+        <p>Email: <a href="mailto:info@cvbvltd.co.uk">chaithanyasainath@cvbvltd.co.uk</a></p>
+      </div>
+      <div class="footer-column business-hours">
+        <h3>Business Hours</h3>
+        <ul>
+          <li>Monday – Friday: 9:00 AM – 6:00 PM</li>
+          <li>Saturday: 10:00 AM – 4:00 PM</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#consultancy">Consultancy</a></li>
+          <li><a href="#technologies">Technologies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2025 CVBV LTD. All rights reserved.</p>
   </footer>
 
+
+
+
   <script>
+    // Navigation toggle for mobile
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
 
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
     });
-
-    navToggle.addEventListener('keypress', (e) => {
-      if(e.key === 'Enter' || e.key === ' ') {
+    navToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         navLinks.classList.toggle('open');
       }
     });
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent actual submission (you can remove this if backend is ready)
+
+      // You can send the form using fetch here if needed
+
+      alert("Thank you for contacting us! We'll get back to you shortly.");
+      form.reset(); // Optional: reset the form fields
+    });
   </script>
+
 </body>
+
 </html>
