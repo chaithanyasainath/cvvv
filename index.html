@@ -2,28 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <title>CVBV LTD – IT Consultancy</title>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Segoe UI', sans-serif; color:#333; background:#f4f4f4; }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      background: #f4f4f4;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
 
+    /* Header */
     header {
-      background:#002244;
-      color:#fff;
-      padding:40px 20px;
-      text-align:center;
-      position:relative;
+      background: #002244;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
     header h1 {
-      font-size:3rem;
+      font-size: 3rem;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 10px;
     }
     header p {
-      font-size:1.3rem;
+      font-size: 1.3rem;
       font-weight: 500;
       color: #a9c0db;
       max-width: 600px;
@@ -32,49 +42,60 @@
       font-style: italic;
     }
 
+    /* Navigation */
     nav {
-      background:#003366;
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      padding:12px 0;
+      background: #003366;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 12px 0;
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     nav a {
-      color:#fff;
-      text-decoration:none;
+      color: #fff;
+      text-decoration: none;
       transition: color 0.3s ease;
     }
-    nav a:hover { color:#ffcc00; }
-
-    .container {
-      max-width:1100px;
-      margin:40px auto;
-      background:#fff;
-      padding:35px 40px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.12);
-      border-radius: 8px;
+    nav a:hover {
+      color: #ffcc00;
     }
-    section { margin-bottom:50px; }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 35px 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    section {
+      margin-bottom: 50px;
+    }
     h2 {
-      color:#002244;
-      margin-bottom:20px;
+      color: #002244;
+      margin-bottom: 20px;
       border-bottom: 3px solid #ffcc00;
       padding-bottom: 8px;
       font-weight: 700;
       letter-spacing: 1px;
     }
+
     ul.services, .tech-columns ul {
-      list-style:none;
-      padding-left:0;
+      list-style: none;
+      padding-left: 0;
     }
     ul.services li, .tech-columns ul li {
-      background:#eef4fa;
-      padding:15px 20px;
-      margin-bottom:12px;
-      border-left:6px solid #002244;
+      background: #eef4fa;
+      padding: 15px 20px;
+      margin-bottom: 12px;
+      border-left: 6px solid #002244;
       font-weight: 600;
       color: #004080;
       border-radius: 4px;
@@ -83,24 +104,26 @@
     ul.services li:hover, .tech-columns ul li:hover {
       background: #dbe9ff;
     }
+
     .tech-columns {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-      gap:30px;
-      margin-top:25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 25px;
     }
     .tech-columns h3 {
-      margin-bottom:15px;
-      color:#003366;
+      margin-bottom: 15px;
+      color: #003366;
       font-weight: 700;
       letter-spacing: 0.8px;
     }
+
     blockquote {
-      border-left:6px solid #ffcc00;
-      margin:25px 0;
-      padding-left:20px;
+      border-left: 6px solid #ffcc00;
+      margin: 25px 0;
+      padding-left: 20px;
       font-style: italic;
-      color:#555;
+      color: #555;
       font-size: 1.1rem;
       background: #fef9e7;
       border-radius: 5px;
@@ -108,12 +131,13 @@
     blockquote p {
       margin: 0;
     }
+
     footer {
-      text-align:center;
-      background:#002244;
-      color:#fff;
-      padding:20px;
-      font-size:1rem;
+      text-align: center;
+      background: #002244;
+      color: #fff;
+      padding: 20px;
+      font-size: 1rem;
       letter-spacing: 1px;
     }
     a {
@@ -125,6 +149,109 @@
       color: #ffcc00;
       text-decoration: underline;
     }
+
+    /* Responsive Images */
+    .section-img {
+      width: 100%;
+      max-width: 100%;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Mobile Navigation - Hamburger */
+    .nav-wrapper {
+      position: relative;
+      background: #003366;
+      user-select: none;
+    }
+    .nav-toggle {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      display: none;
+      flex-direction: column;
+      width: 30px;
+      height: 22px;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 110;
+    }
+    .nav-toggle span {
+      display: block;
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+    }
+    nav {
+      justify-content: center;
+      padding: 14px 20px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    nav ul li a {
+      padding: 8px 5px;
+      display: inline-block;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+        max-width: 90%;
+      }
+      .container {
+        padding: 25px 20px;
+        margin: 25px 15px;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      /* Make nav a hamburger menu */
+      .nav-wrapper {
+        position: relative;
+      }
+      nav {
+        background: #003366;
+        padding: 0;
+        position: relative;
+        box-shadow: none;
+      }
+      nav ul {
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background: #003366;
+        width: 100%;
+      }
+      nav ul.open {
+        max-height: 500px; /* Enough for all links */
+      }
+      nav ul li {
+        border-top: 1px solid #002244;
+        text-align: center;
+        margin: 0;
+      }
+      nav ul li a {
+        padding: 15px 0;
+        font-size: 1.1rem;
+        display: block;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -134,18 +261,28 @@
     <p>Delivering Strategic IT Solutions with Integrity, Innovation & Expertise</p>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#consultancy">Consultancy</a>
-    <a href="#technologies">Technologies</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="nav-wrapper">
+    <nav>
+      <ul id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#consultancy">Consultancy</a></li>
+        <li><a href="#technologies">Technologies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" tabindex="0" role="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 
   <div class="container">
 
     <section id="about">
       <h2>About Us</h2>
+      <img class="section-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1100&q=80" alt="Team working on IT solutions">
       <p>
         CVBV LTD is a premier IT consultancy based in Romford, England, committed to empowering UK businesses through innovative technology solutions. Founded in 2025, we specialise in delivering bespoke IT strategies that align perfectly with each client’s unique objectives and challenges.
       </p>
@@ -159,6 +296,7 @@
 
     <section id="services">
       <h2>Our Services</h2>
+      <img class="section-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1100&q=80" alt="IT services and planning">
       <ul class="services">
         <li>Custom Software & Web Application Development tailored to your business needs</li>
         <li>Comprehensive IT Infrastructure Planning & Optimisation ensuring scalability</li>
@@ -173,6 +311,7 @@
 
     <section id="consultancy">
       <h2>IT Consultancy Excellence</h2>
+      <img class="section-img" src="https://images.unsplash.com/photo-1554168146-c3ab7e2cd4b3?auto=format&fit=crop&w=1100&q=80" alt="IT consultancy discussion">
       <p>
         At <strong>CVBV LTD</strong>, we recognise the complexity and critical nature of IT management in today’s business environment. From detailed cybersecurity assessments to tailored disaster recovery plans, our consultants provide independent, expert guidance designed to future-proof your infrastructure.
       </p>
@@ -194,6 +333,7 @@
 
     <section id="technologies">
       <h2>Technologies We Offer</h2>
+      <img class="section-img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1100&q=80" alt="Technology and code">
       <p>
         We harness the power of leading technologies to deliver innovative and reliable solutions. Our team continuously updates its expertise to provide you with access to the best tools and platforms available.
       </p>
@@ -238,7 +378,7 @@
     <section id="contact">
       <h2>Company & Contact Information</h2>
       <p><strong>Registered Office Address:</strong> 45 South Street, Romford, England, RM1 2BX</p>
-      <p><strong>Nature of Business (SIC):</strong> Information Technology Consultancy Activities</p>
+      <p><strong>Nature of Business (SIC):</strong> 62020 – Information Technology Consultancy Activities</p>
       <p><strong>Phone:</strong> +44 7990 257886 &nbsp;&nbsp; • &nbsp;&nbsp; <strong>Email:</strong> <a href="mailto:chaitanyaguttula3@gmail.com">chaitanyaguttula3@gmail.com</a></p>
     </section>
   </div>
@@ -247,5 +387,20 @@
     &copy; 2025 CVBV LTD – All Rights Reserved
   </footer>
 
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navToggle.addEventListener('keypress', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        navLinks.classList.toggle('open');
+      }
+    });
+  </script>
 </body>
 </html>
